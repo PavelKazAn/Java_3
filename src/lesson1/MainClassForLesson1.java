@@ -37,6 +37,17 @@ public class MainClassForLesson1 {
         System.out.println("appleBox.getWeight() = " + appleBox.getWeight());
 
         System.out.println("orangeBox.compare(orangeBox) = " + orangeBox.compare(appleBox));
+
+        Box<Apple> appleBox2 = new Box<>(new Apple());
+        appleBox2.addMoreFruit(new Apple(),9);
+
+        System.out.println("appleBox.getWeight() = " + appleBox.getWeight());
+        System.out.println("appleBox2.getWeight() = " + appleBox2.getWeight());
+
+        appleBox.transferTo(appleBox2);
+
+        System.out.println("appleBox.getWeight() = " + appleBox.getWeight());
+        System.out.println("appleBox2.getWeight() = " + appleBox2.getWeight());
         // Конец третьего задания.
     }
     private static ArrayList<Integer> convertingArrayToArrayList(int[] arrInt) {

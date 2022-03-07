@@ -8,10 +8,10 @@ import java.util.List;
 public class Box <T extends Fruit> {
 
     private List<T> box = new ArrayList<>();
-    private T fruit;
+    private T fruits;
 
     public Box(T fruit) {
-        this.fruit = fruit;
+        this.fruits = fruit;
     }
 
     public void add(T fruit){
@@ -30,6 +30,13 @@ public class Box <T extends Fruit> {
             weight += oneFruit.getWeight();
         }
         return weight;
+    }
+
+    public void transferTo(Box<T> secondBox){
+        for (T fruit : box) {
+            secondBox.add(fruit);
+        }
+        box.clear();
     }
 
     public boolean compare (Box<?> secondBox){
