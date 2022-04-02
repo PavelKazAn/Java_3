@@ -5,6 +5,7 @@ import lesson5.race.track.Race;
 import lesson5.race.track.Road;
 import lesson5.race.track.Tunnel;
 
+import java.util.*;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
@@ -27,7 +28,6 @@ public class MainClass {
         for (Car car : cars) {
             new Thread(car).start();
         }
-
         messagesInTheRace();
 
     }
@@ -37,6 +37,7 @@ public class MainClass {
             System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Подготовка!!!");
             notificationsInTheRace.await();
             System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Гонка началась!!!");
+            notificationsInTheRace.await();
             notificationsInTheRace.await();
             System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Гонка закончилась!!!");
         } catch (InterruptedException | BrokenBarrierException e) {
